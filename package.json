@@ -1,22 +1,26 @@
 {
-  "name": "ts-project-base",
-  "version": "2.0.0",
+  "name": "easypaypal",
+  "version": "0.0.1",
   "main": "dist/index.js",
-  "repository": "https://github.com/arantesxyz/ts-project-base.git",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/arantesxyz/EasyPayPal.git",
   "author": "Gustavo Arantes <me@arantes.dev>",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
     "dev": "tsnd --transpile-only --respawn --ignore-watch=\"node_modules|\\.json\" src/index.dev.ts",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "yarn lint && yarn test && yarn build"
   },
   "husky": {
     "hooks": {
       "pre-push": "yarn lint && yarn test"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.21.0"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.9",
     "@typescript-eslint/eslint-plugin": "^3.10.0",
