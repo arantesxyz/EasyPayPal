@@ -1,5 +1,10 @@
-console.log("Hello World!");
 
-import { sum } from "./module";
+import { BaseURL, Endpoints, Time } from "./constants";
+import { Environment } from "./entities/Environment";
 
-console.log(sum(1, 5));
+export {
+  BaseURL,
+  Endpoints,
+  Time,
+  Environment
+};
